@@ -1,0 +1,49 @@
+.speech-bubble {
+    background: rgba(0, 0, 0, .04);
+    border-radius: 5px;
+    padding: 10px;
+    position: relative;
+}
+
+.speech-bubble:after {
+    border: 13px solid transparent;
+    border-top-color: rgba(0, 0, 0, .04);
+    content: "";
+    position: absolute;
+    right: 30px;
+    top: 100%;
+}
+
+.quote {
+    border: none;
+    margin: 20px 0 30px;
+}
+
+.quote p:after, .quote p:before {
+    font-size: 50px;
+    opacity: .15;
+    position: absolute;
+}
+
+.quote p:before {
+    content: "“";
+    left: 5px;
+    top: 2px;
+}
+
+.quote p:after {
+    content: "”";
+    bottom: -20px;
+    right: 3px;
+}
+.quote p:after, .quote p:before {
+    font-size: 50px;
+    opacity: .15;
+    position: absolute;
+}
+
+ul li, a  {
+    font-weight: normal;
+    text-decoration: none;
+    color: #b83f45;
+}

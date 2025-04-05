@@ -1,0 +1,59 @@
+{
+    "frameworks": [
+      {
+        "id": 1,
+        "name": "React",
+        "description": "React is a JavaScript library for creating user interfaces. Its core principles are declarative code, efficiency, and flexibility. Simply specify what your component looks like and React will keep it up-to-date when the underlying data changes",
+        "language": "JavaScript"
+      },
+      {
+        "id": 2,
+        "name": "Angular",
+        "description": "A TypeScript-based open-source web application framework.",
+        "language": "JavaScript"
+      },
+      {
+        "id": 3,
+        "name": "Vue",
+        "description": "A progressive framework for building UI on the web.",
+        "language": "JavaScript"
+      },
+      {
+        "id": 4,
+        "name": "Django",
+        "description": "A high-level Python web framework for rapid development.",
+        "language": "Python"
+      },
+      {
+        "id": 5,
+        "name": "Flask",
+        "description": "A lightweight WSGI web application framework.",
+        "language": "Python"
+      },
+      {
+        "id": 6,
+        "name": "FastAPI",
+        "description": "A modern, fast web framework for building APIs.",
+        "language": "Python"
+      },
+      {
+        "id": 7,
+        "name": "Spring Boot",
+        "description": "A framework for building stand-alone, production-grade Spring applications.",
+        "language": "Java"
+      },
+      {
+        "id": 8,
+        "name": "Jakarta EE",
+        "description": "A set of specifications for enterprise applications in Java.",
+        "language": "Java"
+      },
+      {
+        "id": 9,
+        "name": "Micronaut",
+        "description": "A modern, JVM-based framework designed for building lightweight applications.",
+        "language": "Java"
+      }
+    ]
+  }
+  
