@@ -22,8 +22,8 @@ export function FrameworkDetail() {
     if (!framework) return <p className="text-center">Loading...</p>;
   
     return (
-        <div className="flex ">
-      <div className="rounded-sm w-[272px] p-2.5 mx-2 mt-2 bg-[hsla(0,0%,100%,0.6)]">
+        <div className="flex">
+      <div className="rounded-sm w-[272px] p-2.5 mx-2 mt-2 bg-[#ffffff99]">
         <h1 className="text-xl font-bold mb-2">{framework.name}</h1>
         <div className="pb-4">
         <span>Example</span>
