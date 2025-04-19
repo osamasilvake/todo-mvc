@@ -4,7 +4,8 @@
         "id": 1,
         "name": "React",
         "description": "React is a JavaScript library for creating user interfaces. Its core principles are declarative code, efficiency, and flexibility. Simply specify what your component looks like and React will keep it up-to-date when the underlying data changes",
-        "language": "JavaScript"
+        "language": "JavaScript",
+        "framework_details": "These are examples written in pure JavaScript."
       },
       {
         "id": 2,
@@ -16,7 +17,8 @@
         "id": 3,
         "name": "Vue",
         "description": "A progressive framework for building UI on the web.",
-        "language": "JavaScript"
+        "language": "JavaScript",
+        "new_item":"New"
       },
       {
         "id": 4,
@@ -53,6 +55,30 @@
         "name": "Micronaut",
         "description": "A modern, JVM-based framework designed for building lightweight applications.",
         "language": "Java"
+      },
+      {
+        "id": 10,
+        "name": "Next.js",
+        "description": "Next js is a React library for creating user interfaces. Its core principles are declarative code, efficiency, and flexibility. Simply specify what your component looks like and React will keep it up-to-date when the underlying data changes",
+        "language": "JavaScript"
+      },
+      {
+        "id": 11,
+        "name": "Sevlte",
+        "description": "Sevlte js is a js library for creating user interfaces. Its core principles are declarative code, efficiency, and flexibility. Simply specify what your component looks like and React will keep it up-to-date when the underlying data changes",
+        "language": "JavaScript"
+      },
+      {
+        "id": 12,
+        "name": "Gatsby",
+        "description": "Gatsby is a js library for creating user interfaces. Its core principles are declarative code, efficiency, and flexibility. Simply specify what your component looks like and React will keep it up-to-date when the underlying data changes",
+        "language": "JavaScript"
+      },
+      {
+        "id": 13,
+        "name": "Nest.js",
+        "description": "Nest.js is a js library for creating user interfaces. Its core principles are declarative code, efficiency, and flexibility. Simply specify what your component looks like and React will keep it up-to-date when the underlying data changes",
+        "language": "JavaScript"
       }
     ]
   }

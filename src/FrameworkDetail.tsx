@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Framework } from "./App";
+
 import "./FrameworkDetail.css";
 import { useParams } from "react-router-dom";
 import Todos from "./components/todos/Todos";
+import { Framework } from "./components/examples/Examples";
 
 // Framework Detail Component
 export function FrameworkDetail() {
@@ -17,13 +18,13 @@ export function FrameworkDetail() {
 
     useEffect(() => {
    fetchFrameworks()
-    }, [id]);
+    }, []);
   
     if (!framework) return <p className="text-center">Loading...</p>;
   
     return (
         <div className="flex">
-      <div className="rounded-sm w-[272px] p-2.5 mx-2 mt-2 bg-[#ffffff99]">
+      <aside className=" rounded-sm h-min w-[272px] p-2.5 mx-2 mt-2 bg-[#ffffff99]">
         <h1 className="text-xl font-bold mb-2">{framework.name}</h1>
         <div className="pb-4">
         <span>Example</span>
@@ -49,7 +50,7 @@ export function FrameworkDetail() {
         <em className="">
         If you have other helpful links to share, or find any of the links above no longer work, please let us know.
         </em>
-      </div>
+      </aside>
       <div className="flex-1/2">
         <Todos />
       </div>

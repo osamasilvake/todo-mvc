@@ -1,9 +1,11 @@
 import { createContext, useState, useEffect, ReactNode } from "react";
+import { useLocation } from "react-router-dom"; // Assuming you're using React Router
 
 export interface Todo {
   id: string;
   text: string;
   isCompleted: boolean;
+  toggleAllTodos: (isCompleted: boolean) => void;
 }
 
 interface TodoContextType {
@@ -27,15 +29,22 @@ interface TodoProviderProps {
 }
 
 export const TodoProvider = ({ children }: TodoProviderProps) => {
-  const [todos, setTodos] = useState<Todo[]>([]);
+  const location = useLocation();
+  const [todos, setTodos] = useState<Todo[]>(() => {
+    // Load todos from sessionStorage (temporary session persistence)
+    const storedTodos = sessionStorage.getItem("todos");
+    return storedTodos ? JSON.parse(storedTodos) : [];
+  });
   const [filter, setFilter] = useState<string>("all");
 
-  // Cleanup todos on unmount
+  // Clear todos when navigating away from the details page (i.e., on unmount)
   useEffect(() => {
-    return () => {
-      setTodos([]);
-    };
-  }, []);
+    // Check if we are navigating to the details page or not
+    if (!location.pathname.includes("details")) {
+      setTodos([]); // Clear todos if we are not on the details page
+      sessionStorage.removeItem("todos"); // Optionally remove from session storage
+    }
+  }, [location.pathname]); // Dependency on the location changes
 
   const addTodo = (text: string) => {
     const newTodo: Todo = {
@@ -43,7 +52,11 @@ export const TodoProvider = ({ children }: TodoProviderProps) => {
       text,
       isCompleted: false,
     };
-    setTodos((prevTodos) => [...prevTodos, newTodo]);
+    setTodos((prevTodos) => {
+      const updatedTodos = [...prevTodos, newTodo];
+      sessionStorage.setItem("todos", JSON.stringify(updatedTodos)); // Save to sessionStorage
+      return updatedTodos;
+    });
   };
 
   const toggleTodo = (id: string) => {

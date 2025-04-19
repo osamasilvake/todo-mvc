@@ -1,0 +1,30 @@
+/* Fade-in animation for background */
+@keyframes fadeInBackground {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Fade-out animation for background */
+  @keyframes fadeOutBackground {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  /* Class to apply fade-in */
+  .fade-in {
+    animation: fadeInBackground 1s forwards;
+  }
+  
+  /* Class to apply fade-out after a delay */
+  .fade-out {
+    animation: fadeOutBackground 1s 1s forwards; /* Start fade-out after 1s */
+  }
+  
