@@ -43,8 +43,8 @@ const ToolTip = (props: TooltipInterface) => {
 			{isVisible && (
 				<>
 					<div
-						className={`absolute shadow-lg rounded border border-gray-300 shadow-s z-10 bg-neutral-900 dark:bg-white 
-              text-white dark:text-black w-64 text-[17px] whitespace-normal break-words
+						className={`absolute shadow-lg rounded border border-gray-300 shadow-s z-10 bg-white 
+               text-black w-64 text-[17px] whitespace-normal break-words
               ${classes.top} ${classes.bottom} ${classes.left} ${classes.right}`}>
 				<h3 className="popover-title">
 					<span className="absolute right-6 text-[13px]">Welcome</span>
@@ -58,8 +58,8 @@ const ToolTip = (props: TooltipInterface) => {
 					/> */}
 	<span
 	className={`
-    absolute w-[15px] h-[15px] rotate-45 dark:bg-white 
-     dark:border-gray-300 z-20
+    absolute w-[15px] h-[15px] rotate-45 bg-white 
+     border-gray-300 z-20
     ${tooltipPosition.top} ${tooltipPosition.bottom}
     ${tooltipPosition.left} ${tooltipPosition.right}
   `}/>
