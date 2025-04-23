@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
-import Button from "../common/button/Button";
-import { ButtonVariantEnum } from "../common/button/Button.enum";
 import { Framework as FrameworkInterface } from "./Examples.interface";
 import { Language } from "./Examples.enum";
-import NonFramework from "./non-framework/NonFramework";
-import Framework from "./framework/Framework";
 import axios from "axios";
+import ExamplesSection from "./examples-section/ExamplesSection";
+import { ExamplesHeadingEnum } from "./examples-heading/ExamplesHeading.enum";
 
 const Examples = () => {
   const [frameworks, setFrameworks] = useState<FrameworkInterface[]>([]);
+  const [nonFrameworks, setNonFrameworks] = useState<FrameworkInterface[]>([]);
   const [selectedLanguage, setSelectedLanguage] = useState<Language>(Language.JavaScript);
 
   useEffect(() => {
@@ -31,31 +30,39 @@ const Examples = () => {
   }, [selectedLanguage]);
 
 
+  const fetchNonFrameworks = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/nonFrameworks");
+      const data = await response.data;
+      setNonFrameworks(data);
+    } catch (error) {
+      console.error("Error fetching non-frameworks:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchNonFrameworks();
+  }, []);
 
   return (
     <div className="flex-1">
 
-      <h2 className="text-[24px] pb-4">Examples</h2>
-
-      <div className="flex bg-[#f4f4f4] shadow-md">
-        {Object.values(Language).map((language) => (
-          <Button key={language} buttonStyle="border-none"
-            variant={ButtonVariantEnum.OUTLINED_IN_Link}
-            onClickHandler={() => setSelectedLanguage(language)}
-            selectedLanguage={selectedLanguage}
-            language={language}
-          >
-            {language}
-          </Button>
-
-        ))}
+      <div>
+       <ExamplesSection 
+        title={ExamplesHeadingEnum.Framework_Heading}
+        frameworks={frameworks}
+        framework={true}
+        selectedLanguage={selectedLanguage}
+        setSelectedLanguage={setSelectedLanguage}
+         />
       </div>
-      <Framework frameworks={frameworks} />
       <hr />
 
       <div>
-        <h2 className="text-[24px] py-4">Compare these to a non-framework implementation</h2>
-        <NonFramework />
+        <ExamplesSection 
+        title={ExamplesHeadingEnum.Non_Framework_Heading}
+        frameworks={nonFrameworks}
+         />
       </div>
 
       <hr />

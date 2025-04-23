@@ -52,7 +52,7 @@ const Button = (props: ButtonInterface) => {
 			{children}
 
 			{selectedLanguage === language && variant === ButtonVariantEnum.OUTLINED_IN_Link && (
-<div className="relative flex-1">
+     <div className="relative flex-1">
       <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 h-[3px] w-[100%] bg-[#AF2F2F]" />
 	  </div>
     )}

@@ -2,16 +2,22 @@ import { useNavigate } from "react-router-dom";
 import { Framework as FrameworkType } from "../Examples.interface";
 import ToolTip from "../../common/tooltip/ToolTip";
 import { ToolTipPositionEnum } from "../../common/tooltip/ToolTip.enum";
+import { FrameworkEnum } from "../Examples.enum";
 
 export interface FrameworkProps {
     frameworks: FrameworkType[];
+    type: FrameworkEnum
   }
 
-const Framework = ({frameworks}: FrameworkProps) => {
+const Framework = ({type, frameworks}: FrameworkProps) => {
     const route =  useNavigate();
 
     const navigateToDetails = (id: number) => {
+      if (type === FrameworkEnum.NonFramework) {
+        route(`/non-framework/${id}`); 
+      } else{
         route(`/framework/${id}`); 
+      }
       };
 
   return (

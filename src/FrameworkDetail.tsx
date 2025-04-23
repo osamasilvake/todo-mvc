@@ -2,29 +2,39 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 import "./FrameworkDetail.css";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import Todos from "./components/todos/Todos";
-import { Framework } from "./components/examples/Examples";
+import { Framework } from "./components/examples/Examples.interface";
 
-// Framework Detail Component
 export function FrameworkDetail() {
     const { id } = useParams<{ id: string }>();
     const [framework, setFramework] = useState<Framework | null>(null);
+   const location =  useLocation();
   
-    const  fetchFrameworks = async () => {
-        const res = await axios.get(`http://localhost:5000/frameworks/${id}`);
-        setFramework(res.data)
+    const  fetchDeatils = async () => {
+      try {
+        const isNonFramework = location.pathname.includes("/non-framework");
+        const endpoint = isNonFramework ? `http://localhost:5000/nonFrameworks/${id}`
+        : `http://localhost:5000/frameworks/${id}`
+          const res = await axios.get(endpoint);
+          
+          setFramework(res.data)
+      } catch (error) {
+        console.log("error feching data",error);
+        
+      }
         }
 
     useEffect(() => {
-   fetchFrameworks()
-    }, []);
+   fetchDeatils()
+    }, [id,location.pathname]);
   
     if (!framework) return <p className="text-center">Loading...</p>;
   
     return (
         <div className="flex">
-      <aside className=" rounded-sm h-min w-[272px] p-2.5 mx-2 mt-2 bg-[#ffffff99]">
+      <aside className="rounded-sm h-min w-[272px] p-2.5 mx-2 mt-2 
+      bg-[#ffffff99] hidden md:block">
         <h1 className="text-xl font-bold mb-2">{framework.name}</h1>
         <div className="pb-4">
         <span>Example</span>
@@ -51,6 +61,7 @@ export function FrameworkDetail() {
         If you have other helpful links to share, or find any of the links above no longer work, please let us know.
         </em>
       </aside>
+
       <div className="flex-1/2">
         <Todos />
       </div>

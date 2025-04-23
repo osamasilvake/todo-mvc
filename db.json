@@ -80,6 +80,16 @@
         "description": "Nest.js is a js library for creating user interfaces. Its core principles are declarative code, efficiency, and flexibility. Simply specify what your component looks like and React will keep it up-to-date when the underlying data changes",
         "language": "JavaScript"
       }
+    ],
+    "nonFrameworks": [
+      {
+        "id": 1,
+        "name": "JQuery",
+        "description": "jQuery is a JavaScript library for creating user interfaces.",
+        "language": "JavaScript",
+        "new_item":"New",
+        "framework_details": "written witthout any frameworks in pure JavaScript."
+      }
     ]
   }
   

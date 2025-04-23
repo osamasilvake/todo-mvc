@@ -32,7 +32,7 @@ const TodosMain = () => {
   const noTodosClass = todos.length === 0;
 
   return (
-    <section className={`main ${noTodosClass ? "hidden" : ""}`}>
+    <section className={`main ${noTodosClass ? "hidden_Todo" : ""}`}>
       <input
         id="toggle-all"
         className="toggle-all"

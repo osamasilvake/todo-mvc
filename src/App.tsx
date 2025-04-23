@@ -10,6 +10,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<FrameworkList />} />
         <Route path="/framework/:id" element={<FrameworkDetail />} />
+        <Route path="/non-framework/:id" element={<FrameworkDetail />} />
       </Routes>
     </Router>
   );
